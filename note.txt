@@ -38,6 +38,7 @@ asd
 -powershell is cmd that improve
 -prob execution policies -> fix by re-strict
     ->use admin: Set-ExecutionPolicy Unrestricted***
+-install PowerShell on mac
 
 // Nest.JS Step-by-Step
 -install
