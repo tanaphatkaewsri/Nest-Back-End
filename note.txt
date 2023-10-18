@@ -1,0 +1,35 @@
+18/10/66
+//Type of API
+
+// Create Backend API
+-Node -> convert JS to lang computer know
+-Nest -> framework for use typeScript to create Backend
+-install nestjs
+-create project
+-controller component -> create API
+-create module, controller
+    -in controller -use @Decorator
+        -create object data (Interface)
+    -use cli auto execute `nest start --watch`
+    -when get api with URI -> we just specific path to @Controller('path') -> 'https://localhost:port/path' ** (not necessary to add Route)
+-create service -> inject service to controller
+-create parameter url (str) -> in controller @Get(':id')
+    -@Param() id: string -> for tell this arg from parameter url
+-create query parameter: '?name=Apple'
+    -method(@Query('name') productName ?: string)
+    -use predicate -> know as a function that return boolean
+-add path url -> main.ts ->  app.setGlobalPrefix('path')
+asd
+//Angular and Nest handle with proxy
+-CROS
+-Angular -> use HttpClientModule
+-inject to component
+-use HttpClientModule -> use url, observable.subscribe()
+-handle CORS (different origin path -> (protocal://domain:port)) with proxy
+    -use angular proxy -> create backend with url same client path -> use proxy for request API (not breaking the rule cause proxy is backend not frontend that use web browser) 
+    -but proxy can use only dev mode***
+-create type for object API
+
+// fetch API with HttpClientModule
+-import to module
+-API service - GET, POST, PUT, DELETE, PATCH
