@@ -33,3 +33,15 @@ asd
 // fetch API with HttpClientModule
 -import to module
 -API service - GET, POST, PUT, DELETE, PATCH
+
+// Windows PowerShell/ Command Promp
+-powershell is cmd that improve
+-prob execution policies -> fix by re-strict
+    ->use admin: Set-ExecutionPolicy Unrestricted***
+
+// Nest.JS Step-by-Step
+-install
+    -nodejs
+    -nestjs -> framework
+    -vscode -> extension: vscode-icons
+-use powershell
