@@ -19,7 +19,7 @@
     -method(@Query('name') productName ?: string)
     -use predicate -> know as a function that return boolean
 -add path url -> main.ts ->  app.setGlobalPrefix('path')
-asd
+
 //Angular and Nest handle with proxy
 -CROS
 -Angular -> use HttpClientModule
@@ -34,15 +34,47 @@ asd
 -import to module
 -API service - GET, POST, PUT, DELETE, PATCH
 
-// Windows PowerShell/ Command Promp
+// Windows PowerShell, Command Promp
 -powershell is cmd that improve
 -prob execution policies -> fix by re-strict
     ->use admin: Set-ExecutionPolicy Unrestricted***
 -install PowerShell on mac
 
+19/10/66
 // Nest.JS Step-by-Step
--install
+/install
     -nodejs
     -nestjs -> framework
     -vscode -> extension: vscode-icons
 -use powershell
+-run project
+/create module and controller
+-structure project
+    -module - folder that contain controllers
+    -controller - 1 controller = 1 route
+        -each route have decorator(@) for behavior route @Get, @Put, etc.
+    -create new module, controller
+/Http Post with Http Body
+    -use postman
+    -use @Post()
+    -urlencoded = % encoding -> use for safe when transmit data with URL ex (&) -> %26
+/Http Delete with Param
+    -@Delete("/:id") -> it's just a name for specify working (but we should use for delete job)
+        -use with @Param("id"): id:string
+            -echo = return something back to server
+/Service
+    -service = static class that contain function -> can share to another components
+        -@Injectable = can inject to another components
+    -inject to constructor()
+/Entity
+    -create variable for receive data, we create class type -> call Entity
+        -entity -> use with database
+        -interface -> use with data object
+/Add Data into Array
+    -create unique id
+        -add lib 'uuid' -> use for generate number id
+        -import uuid -> and use to property id
+/Delete and Error Exception
+    -create function in service -> find exist data id
+    -create error exception = error handler
+    -.filter(), .find()
