@@ -104,4 +104,47 @@
         -signature (body)
             -is generate from algorithm RS256
         -JWT use RSA generate from server = (header).(payload).(body) = token
-            -sent JWT to client -> client check by use RSA PUBLIC for encribe token that comefrom server (is valid or not)
+            -sent JWT to client -> client check by use RSA PUBLIC for decrypt token that comefrom server (is valid or not)
+
+// Authentication and Authorization
+-authentication = confirm identity
+    -login username, pass, bio (hand, eye)
+    -level
+        -single factor auth
+        -two-factor auth
+        -multi-factor auth
+-authorization = role that this user can access level (admin, user)
+    -role-base access control, JWT, SAML, OpenID Auth, OAuth
+
+// json-web-token -> use for keep non-sensitive data
+-authentication, authorization
+-server based authentication
+    -session id
+    -authentication request
+        -credential(username/pass) -> session id -> cookie
+    -subsequence request
+        -cookie -> session id -> request
+-JWT = token that contain header.payload.signature
+    -header -> SHA256, RSA
+    -payload -> user id, role, email
+    -signature -> digital sign
+-JWT use for keep user id and roles**
+-authentication to server -> server send jwt back to localStorage -> request attech jwt to server for decrypt (server pick from payload to check)
+-localStorage and cookies (XSS, XSRF)
+
+// JWT (json web token)
+-stateful, stateless
+-session
+    -session id -> cookies
+-cluster
+-stateful -> app use session
+-stateless -> app use token
+-token -> custom, jwt
+-native mobile -> not working with web (not use cookies) so not suitable with stateful
+-jwt structure
+    -header
+    -payload
+    -sign(payload -> header.alg, SECRET_KEY)
+-digital signature
+-jwt work -> use signature for verify token
+    -login -> server generate token -> sent back to client, keep token in localStorage, cookies -> client request+token -> server verify (payload+header.alg+signature, SECRET_KEY)
