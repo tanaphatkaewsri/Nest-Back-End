@@ -78,3 +78,30 @@
     -create function in service -> find exist data id
     -create error exception = error handler
     -.filter(), .find()
+
+//JWT is?? (Json Web Token)
+-HMAC Secret
+-RSA PRIVATE KEY
+-RSA PUBLIC KEY
+-PAYLOAD
+-server to server
+    -JWT components
+        -header (header)
+            -type: JTW, algorithm: HS256 = HMAC SECRET, base64 (use HMAC encode to base64 but it's not a secret just convert to string)
+        -payload (payload)
+            -user_id: 1, , base64 (use payload encode to base64 but it's not a secret just convert to string)
+        -signature (body)
+            -is generate from algorithm HS256
+        -JWT = (header).(payload).(body) = token
+    -payload set expired for change token
+        -careful about sync time between device that communicate
+-client to server
+    -JWT components
+        -header (header)
+            -type: JTW, algorithm: RS256 = RSA PRIVATE, base64 (use RSA encode to base64 but it's not a secret just convert to string)
+        -payload (payload)
+            -user_id: 1, , base64 (use payload encode to base64 but it's not a secret just convert to string)
+        -signature (body)
+            -is generate from algorithm RS256
+        -JWT use RSA generate from server = (header).(payload).(body) = token
+            -sent JWT to client -> client check by use RSA PUBLIC for encribe token that comefrom server (is valid or not)
