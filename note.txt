@@ -204,3 +204,8 @@
     -blockchain
     -credential firebase from google
 -how to create Public Key, Private Key
+
+https://www.jittagornp.me/blog/what-is-public-key-private-key/?series=pki
+https://www.jittagornp.me/blog/what-is-x509-certificate/?series=pki
+https://www.jittagornp.me/blog/what-is-https/
+https://rath.asia/blog/2017/02/19/https-and-related-technology-explained/
