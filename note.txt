@@ -148,3 +148,59 @@
 -digital signature
 -jwt work -> use signature for verify token
     -login -> server generate token -> sent back to client, keep token in localStorage, cookies -> client request+token -> server verify (payload+header.alg+signature, SECRET_KEY)
+
+// Public Key Infrastructure
+-sender(A)
+    -data + symmetric key -> symmetric = data encryption
+    -symmetric key -> public key(B) = symmetric key encryption
+    -send: data encryption + symmetric key encryption
+-symmetric key = what key encryption, that key decryption
+-receiver(B)
+    -receive: data encryption + symmetric key encryption
+    -private key(B) -> decrypt symmetric key encryption = symmetric key
+    -symmetric key -> decrypt data encryption = data
+
+// Digital Signature Methodology
+-sender(A)
+    -data -> hash algorithm = hash value(A)
+    -hash value(A) -> private key(A) = signature
+    -send: signature + data
+-receiver(B)
+    -receive: signature + data
+    -signature -> public key(A) = hash value(B)
+    -data -> hash algorithm = hash value(A)
+    -check hash value(A) and hash value(B) = 100% -> accept
+
+// Public Key, Private Key
+-key, encryption, encrypt, decrypt
+-secret key, keypair = 2Keys
+-secret key
+    -symmetric encryption = what is key encrypt, that key decrypt
+    -can generate by set, random
+    -algorithm ex AES
+-Keypair, 2Keys
+    -asymmetric encryption = one key encrypt(public key), one key decrypt(private key)
+    -base64 format -> ---BEGIN---, ---END---
+    -public key and private key generate by math, cant random
+    -each keys have relationship
+    -each keys can valid each other
+    -algorithm ex RSA, ECC
+-use case -> secret key encrypt data -> use 2Keys encrypt secret key
+-digital signature
+    -use encrypt to 'sign', use decrypt to 'verify'
+    -use case -> use key to 'sign/verify token' for authentication
+        -verify token in 2Keys we can use public key that we sign token from private key
+        -we cant use same key to sign and verify**
+-specific way to encrypt
+    -fast: secret key
+    -share: keypair (public key, private key)
+-RSA (Rivest, Shamir, Adleman)
+    -is algorithm for public key, private key -> asymmetric encryption
+-public key, private key use for
+    -digital certification -> Https
+    -digital signature
+    -working SSH
+    -JWT for sign, verify token with RSA algorithm
+    -blockchain
+    -credential firebase from google
+-how to create Public Key, Private Key
