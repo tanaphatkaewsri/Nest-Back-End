@@ -215,3 +215,21 @@
     -encrypt: data -> encrypt with key (public/private) -> token
     -decrypt: token -> decrypt with key (public/private) -> data
     
+SSL?
+TSL?
+SSL certification
+digital signature
+cryptography
+    hashing, encrypt, decrypt
+    symmetric, asymmetric
+        public key, private key
+    algorithm
+        AES, RSA
+public key Infrastructure
+hash function
+    digest
+        collision resistant
+    SHA, RIPEMD
+digital certification
+    certification authority
+    registeration authority
