@@ -80,10 +80,10 @@
     -.filter(), .find()
 
 //JWT is?? (Json Web Token)
--HMAC Secret
--RSA PRIVATE KEY
--RSA PUBLIC KEY
--PAYLOAD
+-HMAC Secret??
+-RSA PRIVATE KEY??
+-RSA PUBLIC KEY??
+-PAYLOAD??
 -server to server
     -JWT components
         -header (header)
@@ -104,11 +104,11 @@
         -signature (body)
             -is generate from algorithm RS256
         -JWT use RSA generate from server = (header).(payload).(body) = token
-            -sent JWT to client -> client check by use RSA PUBLIC for decrypt token that comefrom server (is valid or not)
+            -sent JWT to client -> client check by use RSA PUBLIC for decrypt token that come from server (is valid or not)
 
 // Authentication and Authorization
 -authentication = confirm identity
-    -login username, pass, bio (hand, eye)
+    -login username, pass, bio(hand, eye)
     -level
         -single factor auth
         -two-factor auth
@@ -125,12 +125,12 @@
     -subsequence request
         -cookie -> session id -> request
 -JWT = token that contain header.payload.signature
-    -header -> SHA256, RSA
+    -header -> SH256, RSA
     -payload -> user id, role, email
     -signature -> digital sign
 -JWT use for keep user id and roles**
 -authentication to server -> server send jwt back to localStorage -> request attech jwt to server for decrypt (server pick from payload to check)
--localStorage and cookies (XSS, XSRF)
+-localStorage and cookies (XSS, XSRF)??
 
 // JWT (json web token)
 -stateful, stateless
@@ -140,25 +140,25 @@
 -stateful -> app use session
 -stateless -> app use token
 -token -> custom, jwt
--native mobile -> not working with web (not use cookies) so not suitable with stateful
+-native mobile -> not working with web (not use cookies) so not suitable with stateful (that use session)
 -jwt structure
     -header
     -payload
     -sign(payload -> header.alg, SECRET_KEY)
 -digital signature
 -jwt work -> use signature for verify token
-    -login -> server generate token -> sent back to client, keep token in localStorage, cookies -> client request+token -> server verify (payload+header.alg+signature, SECRET_KEY)
+    -login -> server generate token -> sent back to client, keep token in localStorage, cookies -> client request + token -> server verify (payload+header.alg+signature, SECRET_KEY)
 
 // Public Key Infrastructure
 -sender(A)
-    -data + symmetric key -> symmetric = data encryption
-    -symmetric key -> public key(B) = symmetric key encryption
+    -data + symmetric key(A) -> symmetric = data encryption
+    -symmetric key(A) -> public key(B) = symmetric key encryption
     -send: data encryption + symmetric key encryption
 -symmetric key = what key encryption, that key decryption
 -receiver(B)
     -receive: data encryption + symmetric key encryption
-    -private key(B) -> decrypt symmetric key encryption = symmetric key
-    -symmetric key -> decrypt data encryption = data
+    -private key(B) -> decrypt symmetric key encryption = symmetric key(A)
+    -symmetric key(A) -> decrypt data encryption = data
 
 // Digital Signature Methodology
 -sender(A)
@@ -172,7 +172,7 @@
     -check hash value(A) and hash value(B) = 100% -> accept
 
 // Public Key, Private Key
--key, encryption, encrypt, decrypt
+-key, encrypt, decrypt
 -secret key, keypair = 2Keys
 -secret key
     -symmetric encryption = what is key encrypt, that key decrypt
@@ -181,7 +181,7 @@
 -Keypair, 2Keys
     -asymmetric encryption = one key encrypt(public key), one key decrypt(private key)
     -base64 format -> ---BEGIN---, ---END---
-    -public key and private key generate by math, cant random
+    -public key and private key generate by math, can't random
     -each keys have relationship
     -each keys can valid each other
     -algorithm ex RSA, ECC
@@ -190,7 +190,7 @@
     -use encrypt to 'sign', use decrypt to 'verify'
     -use case -> use key to 'sign/verify token' for authentication
         -verify token in 2Keys we can use public key that we sign token from private key
-        -we cant use same key to sign and verify**
+        -we can't use same key to sign and verify**
 -specific way to encrypt
     -fast: secret key
     -share: keypair (public key, private key)
@@ -204,6 +204,15 @@
     -blockchain
     -credential firebase from google
 -how to create Public Key, Private Key
+    -OpenSSL, Java Keytool, SSH Keygen, Programming
+-Key format
+    -public key -> X.509
+    -private key -> PKCS#8
+-Example code java
+-Base64 format
+-file .pem, .key, .pub
+-test decrypt/encrypt public key, private key
+    
 
 https://www.jittagornp.me/blog/what-is-public-key-private-key/?series=pki
 https://www.jittagornp.me/blog/what-is-x509-certificate/?series=pki
