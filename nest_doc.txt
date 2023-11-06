@@ -1,2 +1,20 @@
 //Nest Fundamental
 -Module -> is a class annotated with a '@Module()', that provide metadata for Nest make to organize the application structure
+    -organize controllers, providers, and other components
+-Controller -> responsibility for handling requests > process them > and return response
+    -define routes and endpoints API
+-Provider = Service -> block of NestJS app, responsibility business logic, database operations, or functionality
+    -we can inject providers to controllers, or tests
+-Dependencies Injection
+-Middleware -> function that call 'before' the route handler (response)
+    -can perform tasks like logging, authentication, or data transmitions
+        -use next() to pass to the middleware function
+-Interceptors -> allow us to process response data before it's send to the client, or to the controllers
+    -use for tasks like error handering, or data transformation
+-Exception Filters -> responsible for processing all unhandled exception across an application
+-Guards -> routes protection and authentication
+    -CanActivate
+-Validation _> valid any data that send into a web app
+    -ValidationPipe
+-Swagger UI
+-with WebSocket(ws), Socket.io
