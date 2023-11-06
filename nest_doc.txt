@@ -1,0 +1,2 @@
+//Nest Fundamental
+-Module -> is a class annotated with a '@Module()', that provide metadata for Nest make to organize the application structure
